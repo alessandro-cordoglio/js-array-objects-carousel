@@ -14,7 +14,7 @@ BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
  */
 
-const container= document.querySelector("items-list")
+
 const images = [
     {
         image: 'img/01.webp',
@@ -39,6 +39,7 @@ const images = [
     }
 ];
 
-images.forEach(element => {
-    container.querySelector("item-element").innerHTML=
-});
+/* images.forEach(element => {
+    const container= document.querySelector(".items-list")
+    container.querySelectorAll(".item-element").innerHTML=element.image
+}); */
