@@ -11,6 +11,10 @@ body{
     width: 700px;
     height: 300px;
     border: 1px solid black;
+    position: relative;
+}
+.items-list{
+    position: relative;
 }
 .item-element{
     border: 1px solid black;
@@ -32,4 +36,15 @@ body{
 }
 .previous{
     bottom: 155px;
+}
+
+.items img, .item-element img{
+    width: 100%;
+}
+
+.text{
+    text-align: right;
+    position: absolute;
+    top: 210px;
+    right: 10px;
 }
