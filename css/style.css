@@ -1,0 +1,35 @@
+
+body{
+    height: 100vh;
+}
+.my_container{
+    max-width: 1500px;
+    margin: auto;
+    height: 100%;
+}
+.items{
+    width: 700px;
+    height: 300px;
+    border: 1px solid black;
+}
+.item-element{
+    border: 1px solid black;
+    width: 200px;
+    height: 60px;
+}
+.next, .previous{
+    position: absolute;
+    cursor: pointer;
+    left: 1299px;
+    margin: 10px 0;
+    font-size: 20px;
+    color: white;
+    z-index: 500;
+    color: black;
+}
+.next{
+    top: 154px;
+}
+.previous{
+    bottom: 155px;
+}
