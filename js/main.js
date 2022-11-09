@@ -39,7 +39,12 @@ const images = [
     }
 ];
 
-/* images.forEach(element => {
+images.forEach(element => {
     const container= document.querySelector(".items-list")
-    container.querySelectorAll(".item-element").innerHTML=element.image
-}); */
+    const itemElement= document.createElement("div")
+    itemElement.classList.add("item-element")
+    const innerElement= `<img src="${element.image}" alt="">`
+    itemElement.innerHTML=innerElement
+    container.append(itemElement)
+    console.log()
+});
