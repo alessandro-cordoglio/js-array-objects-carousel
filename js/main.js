@@ -65,23 +65,25 @@ images.forEach(element => {
     mainContainer.append(mainElement)
     if (mainElement.id=="main-1") {
         mainElement.classList.add("selected-main")
+        document.querySelector(".text").innerHTML=`<h1 class="fs-5">${images[0].title}</h1><p>${images[0].text}</p>`
     }
 });
 
 BtnNext.addEventListener("click", function(){
-        console.log(active)
+        /* console.log(active) */
         document.querySelectorAll(".item-element")[active].classList.remove("selected")
         document.querySelectorAll(".item")[active].classList.remove("selected-main")
-    if (active===images.length - 1) {
+    if (active===images.length - 1 ) {
         active=0
     }else{
         active++;
     }
-    
+    document.querySelector(".text").innerHTML=`<h1 class="fs-5">${images[active].title}</h1><p>${images[active].text}</p>`
     document.querySelectorAll(".item-element")[active].classList.add("selected")
     document.querySelectorAll(".item")[active].classList.add("selected-main")
     
 })
+
 BtnPrev.addEventListener("click", function(){
     console.log(active)
     document.querySelectorAll(".item-element")[active].classList.remove("selected")
@@ -93,5 +95,6 @@ if (active===0) {
 }
 document.querySelectorAll(".item-element")[active].classList.add("selected")
 document.querySelectorAll(".item")[active].classList.add("selected-main")
+document.querySelector(".text").innerHTML=`<h1 class="fs-5">${images[active].title}</h1><p>${images[active].text}</p>`
 
 })
