@@ -71,22 +71,27 @@ images.forEach(element => {
 BtnNext.addEventListener("click", function(){
         console.log(active)
         document.querySelectorAll(".item-element")[active].classList.remove("selected")
+        document.querySelectorAll(".item")[active].classList.remove("selected-main")
     if (active===images.length - 1) {
         active=0
     }else{
         active++;
     }
+    
     document.querySelectorAll(".item-element")[active].classList.add("selected")
+    document.querySelectorAll(".item")[active].classList.add("selected-main")
     
 })
 BtnPrev.addEventListener("click", function(){
     console.log(active)
     document.querySelectorAll(".item-element")[active].classList.remove("selected")
+    document.querySelectorAll(".item")[active].classList.remove("selected-main")
 if (active===0) {
     active=images.length - 1
 }else{
     active--;
 }
 document.querySelectorAll(".item-element")[active].classList.add("selected")
+document.querySelectorAll(".item")[active].classList.add("selected-main")
 
 })
