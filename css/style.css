@@ -10,7 +10,6 @@ body{
 .items{
     width: 760px;
     height: 360px;
-    border: 1px solid black;
     position: relative;
 }
 .items-list{
@@ -36,20 +35,31 @@ body{
 .previous{
     bottom: 320px;
 }
-.items img, .item-element img{
+
+.item img, .item-element img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.item img{
+    height: 360px;
+}
 .text{
     text-align: right;
     position: absolute;
-    top: 210px;
+    top: 240px;
+    right: 10px;
    
 }
 .item-element img{
     filter: brightness(50%);
 }
 .selected{
-    border: 1px soldi white;
+    border: 1px solid white;
+}
+.selected-main{
+    display: block !important;
+}
+.item{
+    display: none;
 }

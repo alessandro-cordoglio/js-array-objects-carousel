@@ -15,7 +15,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
  */
 const BtnNext= document.querySelector(".next")
 const BtnPrev= document.querySelector(".previous")
-
+let active=0
 const images = [
     {
         id: 1,
@@ -49,10 +49,44 @@ images.forEach(element => {
     const container= document.querySelector(".items-list")
     const itemElement= document.createElement("div")
     itemElement.classList.add("item-element")
-    const innerElement= `<img id="${element.id}" src="${element.image}" alt="">`
+    const innerElement= `<img src="${element.image}" alt="${element.title}">`
     itemElement.innerHTML=innerElement
+    itemElement.setAttribute(`id`, `${element.id}`)
     container.append(itemElement)
-});
-/* BtnNext.addEventListener("click", function{
+    if (itemElement.id=="1") {
+        itemElement.classList.add("selected")
+    }
 
-}) */
+    const mainContainer= document.querySelector(".items")
+    const mainElement= document.createElement("div")
+    mainElement.classList.add("item")
+    mainElement.setAttribute(`id`, `main-${element.id}`)
+    mainElement.innerHTML=innerElement
+    mainContainer.append(mainElement)
+    if (mainElement.id=="main-1") {
+        mainElement.classList.add("selected-main")
+    }
+});
+
+BtnNext.addEventListener("click", function(){
+        console.log(active)
+        document.querySelectorAll(".item-element")[active].classList.remove("selected")
+    if (active===images.length - 1) {
+        active=0
+    }else{
+        active++;
+    }
+    document.querySelectorAll(".item-element")[active].classList.add("selected")
+    
+})
+BtnPrev.addEventListener("click", function(){
+    console.log(active)
+    document.querySelectorAll(".item-element")[active].classList.remove("selected")
+if (active===0) {
+    active=images.length - 1
+}else{
+    active--;
+}
+document.querySelectorAll(".item-element")[active].classList.add("selected")
+
+})
